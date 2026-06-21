@@ -6,6 +6,8 @@ Two Java/Spring Boot microservices for a multi-tenant e-commerce platform: **ord
 
 ## What this system does
 
+
+
 - **order-service** lets you create an order, update its status, and cancel it. Every order belongs to a tenant (a business/merchant), and tenants can never see each other's data.
 - **notification-service** listens for order events and records a notification: a receipt when an order is created or updated, and a completion message when an order reaches a final state (completed or cancelled).
 - The two services talk to each other through an **outbox pattern**, not a direct call. I'll explain why below.
